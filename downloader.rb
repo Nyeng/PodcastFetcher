@@ -3,6 +3,7 @@ require 'bundler/setup'
 require 'nokogiri'
 require 'net/http'
 require 'open-uri'
+require 'typhoeus'
 
 
 class Downloader
@@ -30,5 +31,5 @@ class Downloader
 
 end
 
-test = Downloader.new('http://podcast.badeog.no/kortapplaus/podcast.xml?1001250')
+test = Downloader.new
 test.download_m3us
