@@ -14,7 +14,7 @@ class Downloader
 
   def download_m3us
     urls = []
-    @doc = Nokogiri::XML(open("http://podcast.badeog.no/kortapplaus/podcast.xml?1001250"))
+    @doc = Nokogiri::XML(open(@cast_url))
     list = @doc.xpath("//enclosure/@url")
 
     list.each do|el|
@@ -27,9 +27,7 @@ class Downloader
       break
     end
   end
-
-
 end
 
-test = Downloader.new
+test = Downloader.new 'http://joeroganexp.joerogan.libsynpro.com/rss'
 test.download_m3us
