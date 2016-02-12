@@ -24,10 +24,11 @@ class Downloader
     #This works but tryna use multi threads
     urls.each do|url|
       system %x{ wget -P ~/audio/ #{url} }
-      break
+      #break
     end
   end
 end
 
-test = Downloader.new 'http://joeroganexp.joerogan.libsynpro.com/rss'
+
+test = Downloader.new
 test.download_m3us
